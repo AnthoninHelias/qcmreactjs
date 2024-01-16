@@ -9,3 +9,7 @@ git checkout nom_de_la_branche
 commande a faire
 
 $ npm install gh-pages --save-dev
+
+remove node module cache
+
+ git rm -r --cached node_modules
