@@ -3,3 +3,9 @@ git checkout -b nom_de_la_branche
 
 bascule sur la branche
 git checkout nom_de_la_branche
+
+
+
+commande a faire
+
+$ npm install gh-pages --save-dev
