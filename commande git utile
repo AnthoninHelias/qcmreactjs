@@ -1,1 +1,5 @@
+efface la branche si elle existe et la recrée puis bascule dessus
 git checkout -b nom_de_la_branche
+
+bascule sur la branche
+git checkout nom_de_la_branche
