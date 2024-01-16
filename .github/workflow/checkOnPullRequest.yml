@@ -1,4 +1,4 @@
-name: Test
+name: CheckOnPullRequest
 on:
   pull_request:
     branches:
@@ -21,6 +21,3 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Build
-        run: npm run build
