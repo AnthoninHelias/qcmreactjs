@@ -19,14 +19,19 @@ remove node module cache
 # Point it to the latest commit of the branch
 git tag archive/<branchname> <branchname>
 
+
+# Push local tags to remote
+git push --tags
+
+#go back to main
+git checkout main
+
 # Delete the branch locally
 git branch -D <branchname>
 
 # Delete the local reference of remote branch ("forget" the remote branch)
 git branch -d -r origin/<branchname>
 
-# Push local tags to remote
-git push --tags
 
 # Delete the remote branch
 git push -d origin <branchname>
