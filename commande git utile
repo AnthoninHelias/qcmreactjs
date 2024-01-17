@@ -13,3 +13,21 @@ $ npm install gh-pages --save-dev
 remove node module cache
 
  git rm -r --cached node_modules
+
+
+# Create a tag named similarly to the branch but with the 'archive/' prefix
+# Point it to the latest commit of the branch
+git tag archive/<branchname> <branchname>
+
+# Delete the branch locally
+git branch -D <branchname>
+
+# Delete the local reference of remote branch ("forget" the remote branch)
+git branch -d -r origin/<branchname>
+
+# Push local tags to remote
+git push --tags
+
+# Delete the remote branch
+git push -d origin <branchname>
+# or, similarly, 'git push origin :<branchname>'
