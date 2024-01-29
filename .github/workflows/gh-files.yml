@@ -9,13 +9,14 @@ on:
       - main
 
 jobs:
-  - run: |
-      git config --global user.email "heliasantho@yahoo.fr"
-      git config --global user.name "AnthoninHelias"
 
-  - deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          git config --global user.email "heliasantho@yahoo.fr"
+          git config --global user.name "AnthoninHelias"
+
       - name: Checkout repository
         uses: actions/checkout@v2
 
