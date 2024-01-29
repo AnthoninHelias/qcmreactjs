@@ -9,7 +9,11 @@ on:
       - main
 
 jobs:
-  deploy:
+  - run: |
+      git config --global user.email "heliasantho@yahoo.fr"
+      git config --global user.name "AnthoninHelias"
+
+  - deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
