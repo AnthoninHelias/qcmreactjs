@@ -14,4 +14,4 @@ jobs:
       - name: Install modules
         run: npm install --force
       - name: run lint
-        run: eslint . --ext .js,.jsx,.ts,.tsx
+        run: npm run lint -- --fix
