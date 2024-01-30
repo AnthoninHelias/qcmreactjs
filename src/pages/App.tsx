@@ -2,6 +2,8 @@ import React from 'react';
 import logo from '../Ressources(image)/logo.svg';
 import './App.css';
 import ButtonClick from "../components/ButtonClick";
+import InputClick from "../components/InputClick";
+
 
 
 function App() {
@@ -21,7 +23,7 @@ function App() {
           Learn React
         </a>
         <ButtonClick children={'OK'} disabled={false}/>
-
+        <InputClick value={''} onChange={() => {}} placeholder={''}/>
 
       </header>
     </div>
