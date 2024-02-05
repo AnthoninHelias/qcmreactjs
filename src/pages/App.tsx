@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import logo from '../Ressources(image)/logo.svg';
 import './App.css';
 import ButtonClick from "../components/ButtonClick";
@@ -7,6 +7,11 @@ import InputClick from "../components/InputClick";
 
 
 function App() {
+  const [inputValue, setInputValue] = useState<string>('');
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value);
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -23,7 +28,13 @@ function App() {
           Learn React
         </a>
         <ButtonClick children={'OK'} disabled={false}/>
-        <InputClick value={''} onChange={() => {}} placeholder={''}/>
+        <InputClick
+          type="text"
+          title="name"
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder="Entrez un nom"
+        />
 
       </header>
     </div>
