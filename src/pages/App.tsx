@@ -27,10 +27,11 @@ function App() {
         >
           Learn React
         </a>
-        <ButtonClick children={'OK'} disabled={false}/>
+        <ButtonClick className='button' children={'OK'} disabled={false} />
         <InputClick
           type="text"
           title="name"
+          className='input'
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Entrez un nom"
