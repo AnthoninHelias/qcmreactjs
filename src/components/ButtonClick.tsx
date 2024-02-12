@@ -1,6 +1,7 @@
 import {FC} from "react";
 import {ReactNode} from "react";
 
+
 interface ButtonClickProps extends React.HTMLAttributes<HTMLButtonElement>{
     //Properties Customized
     disabled?: boolean
@@ -15,5 +16,4 @@ const ButtonClick: FC<ButtonClickProps> = ( {disabled = false,children , ...prop
         </button>
     )
 }
-
 export default ButtonClick

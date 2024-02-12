@@ -25,9 +25,11 @@ function App() {
         <ButtonClick children={'OK'} disabled={false}/>
         <InputClick value={''} onChange={() => {}} placeholder={''}/>
 
+
       </header>
     </div>
   );
 }
+
 
 export default App;
