@@ -1,8 +1,9 @@
 import React, { ChangeEvent, useState } from 'react';
-import logo from '../Ressources(image)/logo.svg';
+
 import './App.css';
 import ButtonClick from "../components/ButtonClick";
 import InputClick from "../components/InputClick";
+import {Link} from "react-router-dom";
 
 function App() {
   const [inputValue, setInputValue] = useState<string>('');
@@ -19,31 +20,30 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+            className="App-link"
+            target="_blank"
+            rel="noopener noreferrer"
         >
-          Learn React
         </a>
-        <ButtonClick className='button' onClick={handleButtonClick} disabled={false} submit={true}>
-          OK
-        </ButtonClick>
+
+          <Link to={"/QuestionReponses"}> <ButtonClick className='button' onClick={handleButtonClick} disabled={false} submit={true}>
+            OK
+          </ButtonClick>
+        </Link>
+
         <InputClick
-          type="text"
-          title="name"
-          className='input'
-          value={inputValue}
-          onChange={handleInputChange}
-          placeholder="Entrez un nom"
+            type="text"
+            title="name"
+            className='input'
+            value={inputValue}
+            onChange={handleInputChange}
+            placeholder="Entrez un nom"
         />
         <p>{displayedText}</p>
-
 
 
       </header>
