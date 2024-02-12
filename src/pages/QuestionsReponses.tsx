@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 
 function QuestionReponses() {
 
+const {displayedText} = useParams<{displayedText: string}>();
 
     return (
         <div className="App">
@@ -12,7 +13,7 @@ function QuestionReponses() {
                 <a>
                     Hello Questions
                 </a>
-                <p>Nom du joueur : </p>
+                <p>Nom du joueur : {displayedText}</p>
 
             </header>
 
