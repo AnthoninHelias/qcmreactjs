@@ -1,5 +1,4 @@
 import React, { ChangeEvent, useState } from 'react';
-import logo from '../Ressources(image)/logo.svg';
 import './App.css';
 import ButtonClick from "../components/ButtonClick";
 import InputClick from "../components/InputClick";
@@ -19,21 +18,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <ButtonClick className='button' onClick={handleButtonClick} disabled={false} submit={true}>
-          OK
-        </ButtonClick>
+        <h2>Bienvenue sur notre Quizz !!</h2>
+        <h3> Veuillez saisir votre nom </h3>
         <InputClick
           type="text"
           title="name"
@@ -41,8 +27,13 @@ function App() {
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Entrez un nom"
+
         />
-        <p>{displayedText}</p>
+        <ButtonClick className='button' onClick={handleButtonClick} disabled={false} submit={true}>
+          Valider
+        </ButtonClick>
+
+        <p className='police'>{displayedText}</p>
 
 
 
