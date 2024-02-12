@@ -3,20 +3,26 @@ import * as ReactDOM from 'react-dom/client'
 import App from "./pages/App";
 import QuestionReponses from "./pages/QuestionsReponses";
 
+
 import {
     createBrowserRouter,
     RouterProvider
 } from 'react-router-dom'
 import './index.css'
 
+
+
 const router = createBrowserRouter([
     {
         path: '/qcmreactjs',
-        element: <App/>
+        element: <App/>,
+
     },
     {
-        path: '/QuestionReponses',
-        element: <QuestionReponses/>
+        path: '/QuestionReponses/:displayedText',
+        element: <QuestionReponses/>,
+
+
     }
 ])
 

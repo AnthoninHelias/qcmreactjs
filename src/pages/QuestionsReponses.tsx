@@ -1,6 +1,6 @@
 import './App.css';
 import * as React from 'react';
-
+import {useParams} from "react-router-dom";
 
 function QuestionReponses() {
 
@@ -12,6 +12,7 @@ function QuestionReponses() {
                 <a>
                     Hello Questions
                 </a>
+                <p>Nom du joueur : </p>
 
             </header>
 
