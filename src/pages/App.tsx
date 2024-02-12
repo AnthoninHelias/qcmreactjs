@@ -42,15 +42,23 @@ function App() {
         </li>
 
 
+    
+        <h2>Bienvenue sur notre Quizz !!</h2>
+        <h3> Veuillez saisir votre nom </h3>
         <InputClick
-            type="text"
-            title="name"
-            className='input'
-            value={inputValue}
-            onChange={handleInputChange}
-            placeholder="Entrez un nom"
+          type="text"
+          title="name"
+          className='input'
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder="Entrez un nom"
+
         />
-        <p>{displayedText}</p>
+        <ButtonClick className='button' onClick={handleButtonClick} disabled={false} submit={true}>
+          Valider
+        </ButtonClick>
+
+        <p className='police'>{displayedText}</p>
 
 
       </header>
