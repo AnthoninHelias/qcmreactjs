@@ -40,4 +40,4 @@ Pour en savoir plus [Husky documentation](https://typicode.github.io/husky/).
 
 ###### Dossier ressources (celui en dehors du src)
 
-Ce dossier sert à stocker a un seul endroit toute les ressources que noos trouvons utiles pour notre projet.
+Ce dossier sert à stocker a un seul endroit toute les ressources que nous trouvons utiles pour notre projet.
