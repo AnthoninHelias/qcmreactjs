@@ -31,16 +31,7 @@ function App() {
         >
         </a>
 
-        <li>
-
-        <Link to={{pathname: `/QuestionReponses/${inputValue}`}}>
-
-          <ButtonClick className='button' onClick={handleButtonClick} disabled={false} submit={true}>
-          OK
-          </ButtonClick>
-        </Link>
-        </li>
-
+        
 
     
         <h2>Bienvenue sur notre Quizz !!</h2>
@@ -54,9 +45,14 @@ function App() {
           placeholder="Entrez un nom"
 
         />
-        <ButtonClick className='button' onClick={handleButtonClick} disabled={false} submit={true}>
-          Valider
-        </ButtonClick>
+
+<Link to={{pathname: `/QuestionReponses/${inputValue}`}}>
+
+  <ButtonClick className='button' onClick={handleButtonClick} disabled={false} submit={true}>
+  Valider
+  </ButtonClick>
+</Link>
+
 
         <p className='police'>{displayedText}</p>
 
