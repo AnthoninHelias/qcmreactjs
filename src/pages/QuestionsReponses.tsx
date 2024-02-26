@@ -8,15 +8,19 @@ function QuestionReponses() {
     const {displayedText} = useParams<{displayedText: string}>();
 
     questionAnswers.map((questionAnswer: QuestionAnswer) => {
+        // ce console.log est inutile mais une erreur survient si on ne la met pas
         console.log(questionAnswer.question);
         questionAnswer.answer.map((answer:{title:string, id:number, correct:boolean} ) => {
+            // ce console.log est inutile mais une erreur survient si on ne la met pas
             console.log(answer.title);
         });
     });
 
-    const answer = questionAnswers[0];
-    const question = questionAnswers[0].question;
-
+    let index:number = 0;
+    const answer = questionAnswers[index];
+    const question = questionAnswers[index].question;
+    // cette déclaration est inutile mais une erreur survient si on ne la met pas
+    index=0;
     return (
         <div className="App">
             <header className="App-header">
