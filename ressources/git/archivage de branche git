@@ -2,6 +2,7 @@
 # Point it to the latest commit of the branch
 git tag archive/<branchname> <branchname>
 
+releaseJour4
 
 # Push local tags to remote
 git push --tags
