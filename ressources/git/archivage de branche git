@@ -2,8 +2,6 @@
 # Point it to the latest commit of the branch
 git tag archive/<branchname> <branchname>
 
-releaseJour4
-
 # Push local tags to remote
 git push --tags
 
@@ -15,7 +13,6 @@ git branch -D <branchname>
 
 # Delete the local reference of remote branch ("forget" the remote branch)
 git branch -d -r origin/<branchname>
-
 
 # Delete the remote branch
 git push -d origin <branchname>
