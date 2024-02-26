@@ -1,4 +1,4 @@
-type QuestionAnswer = {
+export type QuestionAnswer = {
     id: number;
     question: string;
     numberAnswer: number;
@@ -9,7 +9,7 @@ type QuestionAnswer = {
     }[];
 };
 
-const questionAnswers : QuestionAnswer[]=
+export const questionAnswers : QuestionAnswer[]=
     [
         {
             id: 1,
@@ -67,4 +67,3 @@ const questionAnswers : QuestionAnswer[]=
         }
 ]
 
-console.log(questionAnswers)
