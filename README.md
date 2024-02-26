@@ -28,7 +28,7 @@ Pour en apprendre plus sur React vous pouvez regarder [React documentation](http
 #### Fonctionnement des workflows
 
 Les workflows se trouvent dans le dossier `.github/workflows`
-`eslint.yml` va vérifier automatiquement la syntaxe en utilisant lint et vérifier le type script.
+`eslint.yml` permet de  vérifier automatiquement la syntaxe en utilisant lint et vérifier le type script.
 `gh-files.yml` permet de déployer automatiquement le projet sur githubpage.
 `node.js.yml` perment de vérifier automatiquement les versions de nodes.
 
