@@ -2,6 +2,7 @@ import './App.css';
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
 import { questionAnswers } from "../data/questionsRéponses";
+import ButtonClick from "../components/ButtonClick";
 
 function QuestionReponses() {
     const { displayedText } = useParams<{ displayedText: string }>();
@@ -21,14 +22,13 @@ function QuestionReponses() {
             <header className="App-header">
                 <p>Bonjour: {displayedText}</p>
                 <h2>{currentQuestion.question}</h2>
-                <ul>
                     {currentQuestion.answer.map((answer) => (
-                        <li key={answer.id}>
-                            {answer.title}
-                        </li>
+                       <div className='container'>
+                        <ButtonClick key={answer.id} className='button' onClick={goToNextQuestion} disabled={false} submit={true}>
+                        {answer.title}
+                        </ButtonClick>
+                        </div>
                     ))}
-                </ul>
-                <button onClick={goToNextQuestion}>Question suivante</button>
             </header>
         </div>
     );
