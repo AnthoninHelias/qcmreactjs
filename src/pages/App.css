@@ -50,6 +50,18 @@
 .police {
   font-size: 30px;
 }
+.container {
+  display: flex;
+  justify-content: space-between; /* Pour aligner les éléments avec un espace égal entre eux */
+  width: 50%; /* Ajustez la largeur en fonction de vos besoins */
+  margin: 0 auto; /* Pour centrer les boutons horizontalement */
+}
+
+.button2 {
+  flex-grow: 1; /* Pour que les boutons prennent le même espace disponible */
+  margin: 5px; /* Espacement entre les boutons */
+}
+
 
 @keyframes App-logo-spin {
   from {
