@@ -18,6 +18,8 @@ function QuestionReponses() {
 
     };
 
+
+    const answerColor = 'bg-green-700';
     const currentQuestion = questionAnswers[currentQuestionIndex];
 
 
@@ -28,7 +30,7 @@ function QuestionReponses() {
                 <h2>{currentQuestion.question}</h2>
                     {currentQuestion.answer.map((answer) => (
                        <div className='container'>
-                        <ButtonClick key={answer.id} className={` ${(changeColor === true)? 'bg-blue-700' :'bg-red-700'}`} onClick={goToNextQuestion} disabled={false} submit={true}>
+                        <ButtonClick key={answer.id} className={` ${(changeColor === true)? `${(answerColor)}`:'bg-purple-700'}`} onClick={goToNextQuestion} disabled={false} submit={true}>
                         {answer.title}
                         </ButtonClick>
                         </div>
