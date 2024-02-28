@@ -56,7 +56,7 @@ export const questionAnswers : QuestionAnswer[]=
                 {
                     id: 3,
                     title: "Océan Pacifique",
-                    correct: true,
+                    correct: false,
                 },
                 {
                     id: 4,

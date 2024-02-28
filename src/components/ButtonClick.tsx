@@ -11,7 +11,7 @@ interface ButtonClickProps extends React.HTMLAttributes<HTMLButtonElement>{
 const ButtonClick: FC<ButtonClickProps> = ( {disabled = false,children , ...props} ) => {
 
     return(
-        <button className={'bg-blue-5000000'} {...props} disabled={disabled} >
+        <button className={'bg-red-700'} {...props} disabled={disabled} >
             {children}
         </button>
     )
