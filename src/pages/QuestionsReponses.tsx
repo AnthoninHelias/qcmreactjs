@@ -7,8 +7,9 @@ import ButtonClick from "../components/ButtonClick";
 function QuestionReponses() {
     const { displayedText } = useParams<{ displayedText: string }>();
     const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
-
+    const [changeColor, setChangeColor] = React.useState(false);
     const goToNextQuestion = () => {
+        setChangeColor(!changeColor);
         if (currentQuestionIndex < questionAnswers.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         }
@@ -24,7 +25,7 @@ function QuestionReponses() {
                 <h2>{currentQuestion.question}</h2>
                     {currentQuestion.answer.map((answer) => (
                        <div className='container'>
-                        <ButtonClick key={answer.id} className='button' onClick={goToNextQuestion} disabled={false} submit={true}>
+                        <ButtonClick key={answer.id} className={` ${(changeColor === true)? 'bg-blue-700' :'bg-red-700'}`} onClick={goToNextQuestion} disabled={false} submit={true}>
                         {answer.title}
                         </ButtonClick>
                         </div>
