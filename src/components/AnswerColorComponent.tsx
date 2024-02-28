@@ -1,7 +1,9 @@
 import React from 'react';
 import ButtonClick from './ButtonClick';
 
-const AnswerColorComponent = ({  answer  , goToNextQuestion }) => {
+
+export type AnswerColorComponentProps = { answer: { id: number; title: string; correct: boolean; }; goToNextQuestion: () => void; };
+const AnswerColorComponent = ({  answer  , goToNextQuestion  } :  AnswerColorComponentProps ) => {
     const [changeColor, setChangeColor] = React.useState(false);
 
     let answerColors = '';
