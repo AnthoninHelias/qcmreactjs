@@ -1,26 +1,34 @@
 import React from 'react';
+import ButtonClick from './ButtonClick';
 
-interface Answer {
-    text: string;
-    correct: boolean;
-}
+const AnswerColorComponent = ({  answer  , goToNextQuestion }) => {
+    const [changeColor, setChangeColor] = React.useState(false);
 
-interface AnswerComponentProps {
-    answers: Answer[];
-}
+    let answerColors = '';
+    if (answer.correct) {
+        answerColors = 'bg-green-700';
+    } else {
+        answerColors = 'bg-red-700';
+    }
 
-const AnswerColorComponent: React.FC<AnswerComponentProps> = ({ answers }) => {
     return (
-        <div>
-            {answers.map((answer, index) => {
-                const answerColors = answer.correct ? 'bg-green-700' : 'bg-red-700';
+        <div className='container'>
+            <ButtonClick
+                key={answer.id}
+                className={`h-12 px-6 m-2 ${(changeColor === true) ? `${answerColors}` : 'bg-purple-700'}`}
+                onClick={()=>{
+                    setChangeColor(!changeColor);
+                    setTimeout(() => { setChangeColor(changeColor);
+                        goToNextQuestion() }, 1000);
 
-                return (
-                    <div key={index} className={`answer ${answerColors}`}>
-                        {`answer ${answerColors}`}
-                    </div>
-                );
-            })}
+                }
+            }
+                disabled={false}
+                submit={true}
+
+            >
+                {answer.title}
+            </ButtonClick>
         </div>
     );
 };
