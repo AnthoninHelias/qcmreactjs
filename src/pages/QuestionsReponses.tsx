@@ -10,9 +10,12 @@ function QuestionReponses() {
     const [changeColor, setChangeColor] = React.useState(false);
     const goToNextQuestion = () => {
         setChangeColor(!changeColor);
-        if (currentQuestionIndex < questionAnswers.length - 1) {
+        setTimeout(() => { if (currentQuestionIndex < questionAnswers.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
-        }
+            setChangeColor(changeColor);
+        }}, 1000);
+
+
     };
 
     const currentQuestion = questionAnswers[currentQuestionIndex];
