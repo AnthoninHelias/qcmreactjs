@@ -1,6 +1,7 @@
 // Timer.tsx
 
 import React, { useState, useEffect } from 'react';
+import '../pages/Timer.css'; // Import the CSS file for styling
 
 interface TimerProps {
 	initialTime: number;
@@ -14,21 +15,30 @@ const Timer: React.FC<TimerProps> = ({ initialTime }) => {
 			setTime((prevTime) => {
 				const newTime = prevTime - 1;
 				if (newTime <= 0) {
-					clearInterval(intervalId); // Arrête l'intervalle lorsque le temps atteint zéro
+					clearInterval(intervalId);
 					return 0;
 				}
 				return newTime;
 			});
 		}, 1000);
 
-		// Nettoyage de l'intervalle lors du démontage du composant
 		return () => clearInterval(intervalId);
 	}, []);
 
+	const progress = (initialTime - time) / initialTime * 100; // Calculate progress percentage
+
 	if (time !== 0) {
-		return <p>Temps restant : {time} secondes</p>;
-	} else {
-		return <p>Temps écoulé !</p>;
+		return (
+			<div>
+				<p>Temps restant : {time} secondes</p>
+				<div className="progress-bar" style={{ width: `${progress}%` }}></div>
+			</div>
+		);
+	}else {return(
+		<div>
+			<p>Temps écoulé !</p>
+			<div className="progress-bar" style={{width: `${progress}%`}}></div>
+		</div>);
 	}
 };
 
