@@ -33,7 +33,7 @@ function QuestionReponses() {
                         if (answer.correct){ answerColors = 'bg-green-700';}else{  answerColors = 'bg-red-700';}
                         return(
                        <div className='container'>
-                        <ButtonClick key={answer.id} className={` ${(changeColor === true)? `${(answerColors)}`:'bg-purple-700'}`} onClick={goToNextQuestion} disabled={false} submit={true}>
+                        <ButtonClick key={answer.id} className={` h-12 px-6 m-2  ${(changeColor === true)? `${(answerColors)}`:'bg-purple-700'}`} onClick={goToNextQuestion} disabled={false} submit={true}>
                         {answer.title}
                         </ButtonClick>
                         </div>
