@@ -3,6 +3,7 @@ import * as React from 'react';
 import { useParams } from 'react-router-dom';
 import { questionAnswers } from "../data/questionsRéponses";
 import AnswerColorComponent from "../components/AnswerColorComponent";
+import Timer from "../components/TimerComponent";
 
 function QuestionReponses() {
     const { displayedText } = useParams<{ displayedText: string }>();
@@ -18,12 +19,14 @@ function QuestionReponses() {
 
 
     return (
+
         <div className="App">
+            <Timer initialTime={5} />
             <header className="App-header">
                 <p>Bonjour: {displayedText}</p>
                 <h2>{currentQuestion.question}</h2>
                 {currentQuestion.answer.map((answer) => (
-                    <AnswerColorComponent key={answer.id} answer={answer} goToNextQuestion={goToNextQuestion} />
+                    <AnswerColorComponent key={answer.id} answer={answer} goToNextQuestion={goToNextQuestion}/>
                 ))}
             </header>
         </div>
