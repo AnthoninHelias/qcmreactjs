@@ -43,6 +43,7 @@ function App() {
           value={inputValue}
           onChange={handleInputChange}
           placeholder="Entrez un nom"
+          style={{ color: 'black' }}
 
         />
 

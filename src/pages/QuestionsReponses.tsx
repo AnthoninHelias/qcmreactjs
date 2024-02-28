@@ -19,7 +19,7 @@ function QuestionReponses() {
     };
 
 
-    const answerColor = 'bg-green-700';
+
     const currentQuestion = questionAnswers[currentQuestionIndex];
 
 
@@ -28,13 +28,16 @@ function QuestionReponses() {
             <header className="App-header">
                 <p>Bonjour: {displayedText}</p>
                 <h2>{currentQuestion.question}</h2>
-                    {currentQuestion.answer.map((answer) => (
+                    {currentQuestion.answer.map((answer) => {
+                        let answerColors = '';
+                        if (answer.correct){ answerColors = 'bg-green-700';}else{  answerColors = 'bg-red-700';}
+                        return(
                        <div className='container'>
-                        <ButtonClick key={answer.id} className={` ${(changeColor === true)? `${(answerColor)}`:'bg-purple-700'}`} onClick={goToNextQuestion} disabled={false} submit={true}>
+                        <ButtonClick key={answer.id} className={` ${(changeColor === true)? `${(answerColors)}`:'bg-purple-700'}`} onClick={goToNextQuestion} disabled={false} submit={true}>
                         {answer.title}
                         </ButtonClick>
                         </div>
-                    ))}
+                    )})}
             </header>
         </div>
     );
