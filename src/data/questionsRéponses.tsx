@@ -9,6 +9,7 @@ export type QuestionAnswer = {
     }[];
 };
 
+
 export const questionAnswers : QuestionAnswer[]=
     [
         {
