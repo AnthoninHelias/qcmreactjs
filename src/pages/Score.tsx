@@ -1,13 +1,20 @@
 import React from "react";
-import ScoreComponent from "../components/ScoreComponent";
+import { Navigate, useLocation } from "react-router-dom";
 
 function Score() {
-    //const answer: ScoreComponentProps['answer'] = { id: 1, title: "Sample Answer", correct: true };
+    const location = useLocation();
+    const locationState = location.state
+
+    // renvoie 
+    if (locationState === null || locationState === undefined) {
+         return <Navigate to={{pathname: `/qcmreactjs`}}/>
+    }
 
     return (
         <div className="App">
             <header className="App-header">
-                <ScoreComponent />
+                <p>Score : {locationState.score}</p>
+
             </header>
         </div>
     );

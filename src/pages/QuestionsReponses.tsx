@@ -8,15 +8,19 @@ import { useNavigate } from "react-router-dom";
 
 function QuestionReponses() {
     const { displayedText } = useParams<{ displayedText: string }>();
-    const [score] = React.useState(0);
+    const [score, setScore] = React.useState(0);
     const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
     const navigate = useNavigate();
-    const goToNextQuestion = () => {
-    if (currentQuestionIndex < questionAnswers.length - 1) {
+    const goToNextQuestion = async (isCorrect : boolean ) => {
+        const newScore = score + 1;
+        if (isCorrect) {
+             setScore(newScore);
+        }
+        if (currentQuestionIndex < questionAnswers.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         }
         else {
-            navigate(`/Findejeu/${displayedText}/${score}`);
+            navigate(`/Findejeu/${displayedText}` , { state: { score: newScore }});
         }
     };
 
@@ -34,10 +38,9 @@ function QuestionReponses() {
                 <p>Bonjour: {displayedText}</p>
                 <h2>{currentQuestion.question}</h2>
                 {currentQuestion.answer.map((answer) => (
-                    
-                    <AnswerColorComponent key={answer.id} answer={answer} goToNextQuestion={goToNextQuestion} />
-                
+                    <AnswerColorComponent key={answer.id} answer={answer} goToNextQuestion={() => goToNextQuestion(answer.correct)} /> 
                 ))}
+                <p>{score}</p>
             </header>
         </div>
     );
