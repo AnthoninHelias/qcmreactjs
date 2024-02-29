@@ -3,7 +3,7 @@ import * as React from 'react';
 import { useParams } from 'react-router-dom';
 import { questionAnswers } from "../data/questionsRéponses";
 import AnswerColorComponent from "../components/AnswerColorComponent";
-import Timer from "../components/TimerComponent";
+import Timer, {timeUp} from "../components/TimerComponent";
 import { useNavigate } from "react-router-dom";
 
 
@@ -23,6 +23,9 @@ function QuestionReponses() {
         else {
             navigate(`/Findejeu/${displayedText}` , { state: { score: newScore }});
         }
+        if (timeUp) {
+            navigate(`/Findejeu/${displayedText}` , { state: { score: newScore }});
+        }
     };
 
 
@@ -36,7 +39,7 @@ function QuestionReponses() {
     return (
 
         <div className="App">
-            <Timer initialTime={666} />
+            <Timer initialTime={3} />
             <header className="App-header">
                 <p>Bonjour: {displayedText}</p>
                 <h2>{currentQuestion.question}</h2>
