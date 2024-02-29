@@ -26,7 +26,7 @@ const AnswerColorComponent = ({  answer  , goToNextQuestion  } :  AnswerColorCom
                 }
             }
                 disabled={false}
-                submit={true}
+
 
             >
                 {answer.title}

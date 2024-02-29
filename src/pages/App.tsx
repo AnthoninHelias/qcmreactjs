@@ -49,14 +49,13 @@ function App() {
 
 <Link to={{pathname: `/QuestionReponses/${inputValue}`}}>
 
-  <ButtonClick className='button' onClick={handleButtonClick} disabled={false} submit={true}>
+  <ButtonClick className='button' onClick={handleButtonClick} disabled={false} >
   Valider
   </ButtonClick>
 </Link>
 
 
         <p className='police'>{displayedText}</p>
-
 
       </header>
 
