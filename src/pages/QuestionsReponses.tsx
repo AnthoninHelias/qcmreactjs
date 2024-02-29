@@ -13,9 +13,10 @@ function QuestionReponses() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
     const navigate = useNavigate();
     const goToNextQuestion = async (isCorrect : boolean ) => {
-        const newScore = score + 1;
+        let newScore = score;
         if (isCorrect) {
-             setScore(newScore);
+            newScore = score + 1;
+            setScore(newScore);
         }
         if (currentQuestionIndex < questionAnswers.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -45,7 +46,6 @@ function QuestionReponses() {
                     <AnswerColorComponent key={answer.id} answer={answer} goToNextQuestion={() => goToNextQuestion(answer.correct)} /> 
 
                 ))}
-                <p>{score}</p>
             </header>
         </div>
     );

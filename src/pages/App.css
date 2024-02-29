@@ -66,6 +66,16 @@
   margin: 5px; /* Espacement entre les boutons */
 }
 
+.scoreStyle {
+    background-Color: #4CAF50;
+    padding: 20px;
+    border-radius: 5px;
+    box-Shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-Align: center;
+    Width: 300px;
+    margin: 0 auto;
+};
+
 
 @keyframes App-logo-spin {
   from {
