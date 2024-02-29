@@ -1,6 +1,7 @@
 import React from "react";
-import { Navigate, useLocation } from "react-router-dom";
+import {Link, Navigate, useLocation} from "react-router-dom";
 import { questionAnswers } from "../data/questionsRéponses";
+import ButtonClick from "../components/ButtonClick";
 
 function Score() {
     const location = useLocation();
@@ -25,7 +26,14 @@ function Score() {
                 {isAboveAverage && <span role="img" aria-label="Applause">Bravo 👏</span>}
                     <p>Votre score est de : {locationState.score}</p>
                 </div>
+                <Link to={{pathname: `/qcmreactjs`}}>
+
+                    <ButtonClick className='button' disabled={false} >
+                        Recommencer
+                    </ButtonClick>
+                </Link>
             </header>
+
         </div>
     );
 }
