@@ -6,7 +6,7 @@ import '../pages/Timer.css'; // Import the CSS file for styling
 interface TimerProps {
 	initialTime: number;
 }
-
+let timeUp = false;
 const Timer: React.FC<TimerProps> = ({ initialTime }) => {
 	const [time, setTime] = useState(initialTime);
 
@@ -36,10 +36,14 @@ const Timer: React.FC<TimerProps> = ({ initialTime }) => {
 		);
 	}else {return(
 		<div>
+			{timeUp = true}
 			<p>Temps écoulé !</p>
 			<div className="progress-bar" style={{width: `${progress}%`}}></div>
 		</div>);
 	}
 };
 
-export default Timer;
+export {Timer as default, timeUp};
+
+
+
