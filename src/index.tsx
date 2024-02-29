@@ -17,7 +17,6 @@ const router = createBrowserRouter([
     {
         path: '/qcmreactjs',
         element: <App/>,
-
     },
     {
         path: '/QuestionReponses/:displayedText',
@@ -28,6 +27,7 @@ const router = createBrowserRouter([
     {
         path: '/Findejeu/:displayedText',
         element: <Score/>,
+
     }
 ])
 
