@@ -2,6 +2,7 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom/client'
 import App from "./pages/App";
 import QuestionReponses from "./pages/QuestionsReponses";
+import Score from "./pages/Score";
 
 
 import {
@@ -23,8 +24,13 @@ const router = createBrowserRouter([
         element: <QuestionReponses/>,
 
 
+    },
+    {
+        path: '/Findejeu/:displayedText/:score',
+        element: <Score/>,
     }
 ])
+
 
 ReactDOM.createRoot((document.getElementById('root')!)).render(
     <React.StrictMode>
