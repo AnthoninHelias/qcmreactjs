@@ -65,6 +65,33 @@ export const questionAnswers : QuestionAnswer[]=
                     correct: true,
                 },
             ],
+        },
+        {
+            id: 3,
+            question: "test?",
+            numberAnswer: 4,
+            answer: [
+                {
+                    id: 1,
+                    title: "bon",
+                    correct: true,
+                },
+                {
+                    id: 2,
+                    title: "faux",
+                    correct: false,
+                },
+                {
+                    id: 3,
+                    title: "faux",
+                    correct: false,
+                },
+                {
+                    id: 4,
+                    title: "faux",
+                    correct: false,
+                },
+            ],
         }
 ]
 

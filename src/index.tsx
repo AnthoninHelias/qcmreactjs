@@ -25,7 +25,7 @@ const router = createBrowserRouter([
 
     },
     {
-        path: '/Findejeu/:displayedText/:score',
+        path: '/Findejeu/:displayedText',
         element: <Score/>,
 
     }
