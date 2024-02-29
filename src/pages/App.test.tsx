@@ -17,26 +17,22 @@ describe('App', () => {
 
 });
 describe('InputClick Component', () => {
-
-    // Test case for rendering the InputClick component
     it('renders InputClick component correctly', () => {
-        // Render the InputClick component
         render(<InputClick value="" onChange={() => {}} placeholder="Test Placeholder" />);
-
-        // Add more assertions based on your component's content and structure
         expect(screen.getByPlaceholderText('Test Placeholder')).toBeInTheDocument();
     });
+
+});
+describe('ButtonClick Component', () => {
     it('getClicked', () => {
-        const mockButtonClick = jest.fn();
-        render(
+    const mockButtonClick = jest.fn();
+    render(
         <ButtonClick onClick={mockButtonClick} disabled={false}>
-        Valider
-       </ButtonClick>)
+            Valider
+        </ButtonClick>)
     const buttonElement = screen.getByText('Valider');
     fireEvent.click(buttonElement);
     expect(mockButtonClick).toHaveBeenCalled();
-    expect(buttonElement).not.toHaveAttribute('disabled');});
-});
-
+    expect(buttonElement).not.toHaveAttribute('disabled');});});
 
 
