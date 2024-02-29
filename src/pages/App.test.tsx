@@ -12,16 +12,13 @@ describe('App', () => {
         (<MemoryRouter>
           <App />)
         </MemoryRouter>));
-
   });
-
 });
 describe('InputClick Component', () => {
     it('renders InputClick component correctly', () => {
         render(<InputClick value="" onChange={() => {}} placeholder="Test Placeholder" />);
         expect(screen.getByPlaceholderText('Test Placeholder')).toBeInTheDocument();
     });
-
 });
 describe('ButtonClick Component', () => {
     it('getClicked', () => {
@@ -33,6 +30,8 @@ describe('ButtonClick Component', () => {
     const buttonElement = screen.getByText('Valider');
     fireEvent.click(buttonElement);
     expect(mockButtonClick).toHaveBeenCalled();
-    expect(buttonElement).not.toHaveAttribute('disabled');});});
+    expect(buttonElement).not.toHaveAttribute('disabled')
+    ;});
+});
 
 

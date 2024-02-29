@@ -40,7 +40,7 @@ function QuestionReponses() {
     return (
 
         <div className="App">
-            <Timer initialTime={3} />
+            <Timer initialTime={300} />
             <header className="App-header">
                 <p>Bonjour: {displayedText}</p>
                 <h2>{currentQuestion.question}</h2>
