@@ -1,57 +1,79 @@
 import './App.css';
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import { questionAnswers } from "../data/questionsRéponses";
-import AnswerColorComponent from "../components/AnswerColorComponent";
-import Timer, {timeUp} from "../components/TimerComponent";
+//import AnswerColorComponent from "../components/AnswerColorComponent";
+import Timer, { timeUp } from "../components/TimerComponent";
 import { useNavigate } from "react-router-dom";
-
+import axios from 'axios';
 
 function QuestionReponses() {
     const { displayedText } = useParams<{ displayedText: string }>();
     const [score, setScore] = React.useState(0);
     const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
+    const [questions, setQuestions] = React.useState<any[]>([]);
     const navigate = useNavigate();
-    const goToNextQuestion = async (isCorrect : boolean ) => {
+
+    const fetchQuestionById = async (id:number) => {
+        try {
+            const response = await axios.get(`http://localhost:8000/questions/${id}`);
+            console.log(response.data.rows[0])
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching question:', error);
+            return null;
+        }
+    };
+
+    const fetchQuestions = async () => {
+        const fetchedQuestions = [];
+        for (let i = 1; ; i++) {
+            const question = await fetchQuestionById(i);
+            if (question) {
+                fetchedQuestions.push(question);
+            } else {
+                break;
+            }
+        }
+        setQuestions(fetchedQuestions);
+    };
+
+    React.useEffect(() => {
+        fetchQuestions();
+    }, []);
+
+    const goToNextQuestion = async (isCorrect: boolean) => {
         let newScore = score;
         if (isCorrect) {
             newScore = score + 1;
             setScore(newScore);
         }
-        if (currentQuestionIndex < questionAnswers.length - 1) {
+        if (currentQuestionIndex < questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
-        }
-        else {
-            navigate(`/Findejeu/${displayedText}` , { state: { score: newScore }});
+        } else {
+            navigate(`/Findejeu/${displayedText}`, { state: { score: newScore } });
         }
         if (timeUp) {
-            navigate(`/Findejeu/${displayedText}` , { state: { score: newScore }});
+            navigate(`/Findejeu/${displayedText}`, { state: { score: newScore } });
         }
     };
 
-
-    
-
-
-
-    const currentQuestion = questionAnswers[currentQuestionIndex];
-
+    const currentQuestion = questions[currentQuestionIndex];
 
     return (
-
         <div className="App">
-            <Timer initialTime={300} />
+            <Timer initialTime={5} />
             <header className="App-header">
                 <p>Bonjour: {displayedText}</p>
-                <h2>{currentQuestion.question}</h2>
-                {currentQuestion.answer.map((answer) => (
-
-                    <AnswerColorComponent key={answer.id} answer={answer} goToNextQuestion={() => goToNextQuestion(answer.correct)} /> 
-
+                {questions.map((question, index) => (
+                    <div key={index}>
+                        <h2>{question.question}</h2>
+                        {/* Affichez ici les réponses de la question */}
+                    </div>
                 ))}
             </header>
         </div>
     );
+    
 }
 
 export default QuestionReponses;
