@@ -12,11 +12,14 @@ function QuestionReponses() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
     const [questions, setQuestions] = React.useState<any[]>([]);
     const navigate = useNavigate();
+    const [response, setResponse] = React.useState<any>(null);
+
 
     const fetchQuestionById = async (id:number) => {
         try {
             const response = await axios.get(`http://localhost:8000/questions/${id}`);
             console.log(response.data.rows[0])
+            setResponse(response.data.rows[0].intitule);
             return response.data;
         } catch (error) {
             console.error('Error fetching question:', error);
@@ -28,11 +31,7 @@ function QuestionReponses() {
         const fetchedQuestions = [];
         for (let i = 1; ; i++) {
             const question = await fetchQuestionById(i);
-            if (question) {
-                fetchedQuestions.push(question);
-            } else {
-                break;
-            }
+             
         }
         setQuestions(fetchedQuestions);
     };
@@ -64,12 +63,9 @@ function QuestionReponses() {
             <Timer initialTime={5} />
             <header className="App-header">
                 <p>Bonjour: {displayedText}</p>
-                {questions.map((question, index) => (
-                    <div key={index}>
-                        <h2>{question.question}</h2>
-                        {/* Affichez ici les réponses de la question */}
-                    </div>
-                ))}
+                {response && (
+                    <p> {(response)}</p>
+                )}
             </header>
         </div>
     );
