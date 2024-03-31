@@ -1,7 +1,6 @@
 import './App.css';
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
-//import AnswerColorComponent from "../components/AnswerColorComponent";
 import Timer, { timeUp } from "../components/TimerComponent";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -14,46 +13,51 @@ function QuestionReponses() {
     const navigate = useNavigate();
     const [response, setResponse] = React.useState<any>(null);
 
-
     const fetchQuestionById = async (id:number) => {
         try {
             const response = await axios.get(`http://localhost:8000/questions/${id}`);
-            console.log(response.data.rows[0])
-            setResponse(response.data.rows[0].intitule);
-            return response.data;
+            //console.log(response.data.rows[0])
+            return response.data.rows[0].intitule;
         } catch (error) {
             console.error('Error fetching question:', error);
             return null;
         }
     };
 
-    const fetchQuestions = async () => {
+    const fetchNextQuestion = async () => {
+        const nextQuestionIndex = currentQuestionIndex + 1;
+        if (nextQuestionIndex < questions.length) {
+            setCurrentQuestionIndex(nextQuestionIndex);
+        } else {
+            // Si toutes les questions ont été posées, redirige vers la fin du jeu
+            navigate(`/Findejeu/${displayedText}`, { state: { score } });
+        }
+    };
+
+    const fetchAllQuestions = async () => {
         const fetchedQuestions = [];
         for (let i = 1; ; i++) {
             const question = await fetchQuestionById(i);
-             
+            if (question) {
+                fetchedQuestions.push(question);
+            } else {
+                break; // Arrête la boucle si aucune question n'est récupérée
+            }
         }
         setQuestions(fetchedQuestions);
     };
 
     React.useEffect(() => {
-        fetchQuestions();
+        fetchAllQuestions();
     }, []);
 
-    const goToNextQuestion = async (isCorrect: boolean) => {
+    const goToNextQuestion = (isCorrect: boolean) => {
         let newScore = score;
         if (isCorrect) {
             newScore = score + 1;
             setScore(newScore);
         }
-        if (currentQuestionIndex < questions.length - 1) {
-            setCurrentQuestionIndex(currentQuestionIndex + 1);
-        } else {
-            navigate(`/Findejeu/${displayedText}`, { state: { score: newScore } });
-        }
-        if (timeUp) {
-            navigate(`/Findejeu/${displayedText}`, { state: { score: newScore } });
-        }
+        fetchNextQuestion();
     };
 
     const currentQuestion = questions[currentQuestionIndex];
@@ -63,14 +67,14 @@ function QuestionReponses() {
             <Timer initialTime={5} />
             <header className="App-header">
                 <p>Bonjour: {displayedText}</p>
-                {response && (
-                    <p> {(response)}</p>
+                {currentQuestion && (
+                    <p> {currentQuestion}</p>
                 )}
-                <button onClick={() => fetchQuestions}>suivant</button>
+                {/* Bouton pour passer à la question suivante */}
+                <button onClick={() => goToNextQuestion(true)}>Suivant</button>
             </header>
         </div>
     );
-    
 }
 
 export default QuestionReponses;
