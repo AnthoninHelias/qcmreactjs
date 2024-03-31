@@ -66,6 +66,7 @@ function QuestionReponses() {
                 {response && (
                     <p> {(response)}</p>
                 )}
+                <button onClick={() => fetchQuestions}>suivant</button>
             </header>
         </div>
     );
