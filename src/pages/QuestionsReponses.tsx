@@ -17,7 +17,7 @@ function QuestionReponses() {
     const fetchAllQuestions = async () => {
         try {
             const response = await axios.get(`https://qcm-api-a108ec633b51.herokuapp.com/questions`);
-            const fetchedQuestions = response.data.rows.map((row: any) => row.intitule);
+            const fetchedQuestions = response.data.rows.map((row: { intitule: string }) => row.intitule);
             console.log('Fetched questions:', fetchedQuestions);
             setQuestions(fetchedQuestions);
         } catch (error) {
