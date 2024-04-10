@@ -9,7 +9,7 @@ describe('QuestionReponses', () => {
     it('renders without crashing', () => {
         render(
             (<MemoryRouter>
-                <QuestionReponses />)
+                <QuestionReponses />
             </MemoryRouter>));
     });
 });
