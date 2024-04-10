@@ -1,7 +1,7 @@
 import './App.css';
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import Timer, { timeUp } from "../components/TimerComponent";
+import Timer from "../components/TimerComponent";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
@@ -9,22 +9,25 @@ function QuestionReponses() {
     const { displayedText } = useParams<{ displayedText: string }>();
     const [score, setScore] = React.useState(0);
     const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
-    const [questions, setQuestions] = React.useState<any[]>([]);
+    const [questions, setQuestions] = React.useState<string[]>([]);
     const navigate = useNavigate();
-    const [response, setResponse] = React.useState<any>(null);
 
-    const fetchQuestionById = async (id:number) => {
+    const fetchAllQuestions = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/questions/${id}`);
-            //console.log(response.data.rows[0])
-            return response.data.rows[0].intitule;
+            const response = await axios.get(`https://qcm-api-a108ec633b51.herokuapp.com/questions`);
+            const fetchedQuestions = response.data.rows.map((row: any) => row.intitule);
+            console.log('Fetched questions:', fetchedQuestions);
+            setQuestions(fetchedQuestions);
         } catch (error) {
-            console.error('Error fetching question:', error);
-            return null;
+            console.error('Error fetching questions:', error);
         }
     };
 
-    const fetchNextQuestion = async () => {
+    React.useEffect(() => {
+        fetchAllQuestions();
+    }, []);
+
+    const fetchNextQuestion = () => {
         const nextQuestionIndex = currentQuestionIndex + 1;
         if (nextQuestionIndex < questions.length) {
             setCurrentQuestionIndex(nextQuestionIndex);
@@ -34,29 +37,7 @@ function QuestionReponses() {
         }
     };
 
-    const fetchAllQuestions = async () => {
-        const fetchedQuestions = [];
-        for (let i = 1; ; i++) {
-            const question = await fetchQuestionById(i);
-            if (question) {
-                fetchedQuestions.push(question);
-            } else {
-                break; // Arrête la boucle si aucune question n'est récupérée
-            }
-        }
-        setQuestions(fetchedQuestions);
-    };
-
-    React.useEffect(() => {
-        fetchAllQuestions();
-    }, []);
-
-    const goToNextQuestion = (isCorrect: boolean) => {
-        let newScore = score;
-        if (isCorrect) {
-            newScore = score + 1;
-            setScore(newScore);
-        }
+    const goToNextQuestion = () => {
         fetchNextQuestion();
     };
 
@@ -68,10 +49,10 @@ function QuestionReponses() {
             <header className="App-header">
                 <p>Bonjour: {displayedText}</p>
                 {currentQuestion && (
-                    <p> {currentQuestion}</p>
+                    <p>{currentQuestion}</p>
                 )}
                 {/* Bouton pour passer à la question suivante */}
-                <button onClick={() => goToNextQuestion(true)}>Suivant</button>
+                <button onClick={goToNextQuestion}>Suivant</button>
             </header>
         </div>
     );
