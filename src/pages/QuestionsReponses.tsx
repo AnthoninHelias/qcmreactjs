@@ -11,6 +11,8 @@ function QuestionReponses() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
     const [questions, setQuestions] = React.useState<string[]>([]);
     const navigate = useNavigate();
+    // variable temporaire 
+    setScore
 
     const fetchAllQuestions = async () => {
         try {
