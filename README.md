@@ -25,13 +25,13 @@ Pour en apprendre plus sur React vous pouvez regarder [React documentation](http
 #### Fonctionnement des workflows
 
 Les workflows se trouvent dans le dossier `.github/workflows`
-`eslint.yml` permet de  vérifier automatiquement la syntaxe en utilisant lint et vérifier que le langage utilisé est du TypeScript.
+`eslint.yml` permet de  vérifier automatiquement la syntaxe en utilisant lint et de vérifier que le langage utilisé est du TypeScript.
 `gh-files.yml` permet de déployer automatiquement le projet sur githubpage.
 `node.js.yml` perment de vérifier automatiquement les versions de nodes.
 
 ##### Husky
 
-Husky permet d'analyser le code avant d'effectuer un commit en utilisant nos différents script , les checks se trouver dans `.husky/pre-commit` .
+Husky permet d'analyser le code avant d'effectuer un commit en utilisant nos différents script , les checks se trouvent dans `.husky/pre-commit` .
 Pour ne pas éxecuter les checks lors du commit , il faut rajouter a la fin du message de commit `-n`.
 Pour en savoir plus [Husky documentation](https://typicode.github.io/husky/).
 
