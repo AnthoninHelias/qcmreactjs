@@ -19,9 +19,12 @@ function QuestionReponses() {
     const fetchAllQuestions = async () => {
         try {
             const response = await axios.get(`https://qcm-api-a108ec633b51.herokuapp.com/questions`);
-            const fetchedQuestions = response.data.rows.map((row: { intitule: string }) => row.intitule);
-           // console.log('Fetched questions:', fetchedQuestions);
-            setQuestions(fetchedQuestions);
+            const fetchedQuestions = response.data.rows.map((row: { id: number; intitule: string }) => ({
+                id: row.id,
+                intitule: row.intitule
+            }));
+            const sortedQuestions = fetchedQuestions.sort((a: { id: number }, b: { id: number }) => a.id - b.id);
+            setQuestions(sortedQuestions.map((question: { id: number; intitule: string }) => question.intitule));
         } catch (error) {
             console.error('Error fetching questions:', error);
         }
