@@ -34,7 +34,7 @@ function QuestionReponses() {
 
     const fetchNextQuestion = (score: number) => {
         const nextQuestionIndex = currentQuestionIndex + 1;
-
+        setSelectedAnswer(null);
         if (nextQuestionIndex < questions.length) {
             setCurrentQuestionIndex(nextQuestionIndex);
             setSelectedAnswer(null); // Reset selected answer for the next question
@@ -94,13 +94,13 @@ function QuestionReponses() {
                 {currentQuestion && (
                     <div>
                         <p>{currentQuestion}</p>
-                        <br/>
+                        <br />
                         <div>
                             {currentAnswer.map((answer, index) => (
                                 <div key={index} className="answer-option">
                                     <input
                                         type="radio" id={`radio_${index}`} name="answers" value={answer.text}
-                                        onChange={handleAnswerChange}
+                                        onChange={handleAnswerChange} checked={selectedAnswer === answer.text}
                                     />
                                     <label htmlFor={`radio_${index}`}>
                                         {answer.text}
@@ -108,7 +108,6 @@ function QuestionReponses() {
                                 </div>
                             ))}
                         </div>
-
                     </div>
                 )}
                 <button onClick={goToNextQuestion}>Suivant</button>
