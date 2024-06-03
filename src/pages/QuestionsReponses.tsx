@@ -32,14 +32,15 @@ function QuestionReponses() {
         fetchAllQuestions();
     }, []);
 
-    const fetchNextQuestion = () => {
+    const fetchNextQuestion = (score: number) => {
         const nextQuestionIndex = currentQuestionIndex + 1;
 
         if (nextQuestionIndex < questions.length) {
             setCurrentQuestionIndex(nextQuestionIndex);
             setSelectedAnswer(null); // Reset selected answer for the next question
         } else {
-            navigate(`/Findejeu/${displayedText}`, { state: { score } });
+            console.log(score);
+            navigate(`/Findejeu/${displayedText}`, { state: { score: score} });
         }
     };
 
@@ -68,10 +69,18 @@ function QuestionReponses() {
         if (selectedAnswer) {
             const isCorrect = currentAnswer.find(answer => answer.text === selectedAnswer)?.correct;
             if (isCorrect) {
-                setScore(prevScore => prevScore + 1);
+                setScore(prevScore => {
+                    const newScore = prevScore + 1
+                    fetchNextQuestion(newScore);
+                    return newScore
+                });
+                console.log("increment");
+
+            } else {
+                fetchNextQuestion(score);
             }
         }
-        fetchNextQuestion();
+
     };
 
     const currentQuestion = questions[currentQuestionIndex];
