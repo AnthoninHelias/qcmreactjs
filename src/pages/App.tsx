@@ -8,6 +8,7 @@ import {Link} from "react-router-dom";
 function App() {
   const [inputValue, setInputValue] = useState<string>('');
   const [displayedText, setDisplayedText] = useState<string>('');
+  const playerName = inputValue || "Joueur 1";
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -19,47 +20,45 @@ function App() {
 
 
   return (
-    <div className="App">
-      <header className="App-header">
+      <div className="App">
+        <header className="App-header">
 
-        <p>
-        </p>
-        <a
-            className="App-link"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-        </a>
-
-        
-
-    
-        <h2>Bienvenue sur notre Quizz !!</h2>
-        <h3> Veuillez saisir votre nom </h3>
-        <InputClick
-          type="text"
-          title="name"
-          className='input'
-          value={inputValue}
-          onChange={handleInputChange}
-          placeholder="Entrez un nom"
-          style={{ color: 'black' }}
-
-        />
-
-<Link to={{pathname: `/QuestionReponses/${inputValue}`}}>
-
-  <ButtonClick className='button' onClick={handleButtonClick} disabled={false} >
-  Valider
-  </ButtonClick>
-</Link>
+          <p>
+          </p>
+          <a
+              className="App-link"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+          </a>
 
 
-        <p className='police'>{displayedText}</p>
+          <h2>Bienvenue sur notre Quizz !!</h2>
+          <h3> Veuillez saisir votre nom </h3>
+          <InputClick
+              type="text"
+              title="name"
+              className='input'
+              value={inputValue}
+              onChange={handleInputChange}
+              placeholder="Entrez un nom"
+              style={{color: 'black'}}
+          />
+          <h3>Veuillez saisir votre nom</h3>
 
-      </header>
+          <Link to={{pathname: `/QuestionReponses/${inputValue || playerName }`}}>
 
-    </div>
+            <ButtonClick className='button' onClick={handleButtonClick} disabled={false}>
+              Valider
+            </ButtonClick>
+          </Link>
+
+
+          <p className='police'>{displayedText}</p>
+
+        </header>
+
+      </div>
   );
 }
 
