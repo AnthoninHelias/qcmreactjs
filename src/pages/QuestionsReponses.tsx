@@ -32,14 +32,15 @@ function QuestionReponses() {
         fetchAllQuestions();
     }, []);
 
-    const fetchNextQuestion = () => {
+    const fetchNextQuestion = (score: number) => {
         const nextQuestionIndex = currentQuestionIndex + 1;
-
+        setSelectedAnswer(null);
         if (nextQuestionIndex < questions.length) {
             setCurrentQuestionIndex(nextQuestionIndex);
             setSelectedAnswer(null); // Reset selected answer for the next question
         } else {
-            navigate(`/Findejeu/${displayedText}`, { state: { score } });
+            console.log(score);
+            navigate(`/Findejeu/${displayedText}`, { state: { score: score} });
         }
     };
 
@@ -68,10 +69,18 @@ function QuestionReponses() {
         if (selectedAnswer) {
             const isCorrect = currentAnswer.find(answer => answer.text === selectedAnswer)?.correct;
             if (isCorrect) {
-                setScore(prevScore => prevScore + 1);
+                setScore(prevScore => {
+                    const newScore = prevScore + 1
+                    fetchNextQuestion(newScore);
+                    return newScore
+                });
+                console.log("increment");
+
+            } else {
+                fetchNextQuestion(score);
             }
         }
-        fetchNextQuestion();
+
     };
 
     const currentQuestion = questions[currentQuestionIndex];
@@ -85,13 +94,13 @@ function QuestionReponses() {
                 {currentQuestion && (
                     <div>
                         <p>{currentQuestion}</p>
-                        <br/>
+                        <br />
                         <div>
                             {currentAnswer.map((answer, index) => (
                                 <div key={index} className="answer-option">
                                     <input
                                         type="radio" id={`radio_${index}`} name="answers" value={answer.text}
-                                        onChange={handleAnswerChange}
+                                        onChange={handleAnswerChange} checked={selectedAnswer === answer.text}
                                     />
                                     <label htmlFor={`radio_${index}`}>
                                         {answer.text}
@@ -99,7 +108,6 @@ function QuestionReponses() {
                                 </div>
                             ))}
                         </div>
-
                     </div>
                 )}
                 <button onClick={goToNextQuestion}>Suivant</button>
