@@ -4,10 +4,12 @@ import { useParams } from 'react-router-dom';
 import Timer from "../components/TimerComponent";
 import { useApi } from "../hooks/useApi";
 
+
 function QuestionReponses() {
     const { displayedText } = useParams<{ displayedText: string }>();
 
     const {score, currentQuestion, currentAnswer, selectedAnswer, handleAnswerChange, goToNextQuestion} = useApi(displayedText);
+
 
     return (
         <div className="App">

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import '../pages/Timer.css'; // Import the CSS file for styling
 
+
 interface TimerProps {
 	initialTime: number;
 }
