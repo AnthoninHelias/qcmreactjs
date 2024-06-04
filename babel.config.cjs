@@ -4,7 +4,6 @@ module.exports = {
               '@babel/preset-react',
               '@babel/preset-typescript'],
     plugins: ['@babel/plugin-transform-modules-commonjs'],
-    testEnvironment: 'jsdom',
     transform: {
         '^.+\\.tsx?$': 'ts-jest',
         '^.+\\.jsx?$': 'babel-jest',

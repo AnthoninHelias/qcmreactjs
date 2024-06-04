@@ -3,6 +3,7 @@ import {MemoryRouter} from "react-router-dom";
 import QuestionReponses from "./QuestionsReponses";
 import React from "react";
 import ButtonClick from "../components/ButtonClick";
+import '@testing-library/jest-dom'
 
 
 

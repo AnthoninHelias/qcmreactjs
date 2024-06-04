@@ -4,6 +4,8 @@ import {MemoryRouter} from "react-router-dom";
 import InputClick from "../components/InputClick";
 import ButtonClick from "../components/ButtonClick";
 import {fireEvent, render, screen} from "@testing-library/react";
+import '@testing-library/jest-dom'
+
 
 
 describe('App', () => {
