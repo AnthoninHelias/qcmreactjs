@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="8" failures="0" errors="0" time="2.886">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-06-04T15:01:51" time="1.712" tests="1">
+    <testcase classname=" test increment function" name=" test increment function" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Score" errors="0" failures="0" skipped="0" timestamp="2024-06-04T15:01:51" time="2.082" tests="2">
+    <testcase classname="Score renders without crashing" name="Score renders without crashing" time="0.011">
+    </testcase>
+    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.01">
+    </testcase>
+  </testsuite>
+  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2024-06-04T15:01:51" time="2.115" tests="3">
+    <testcase classname="App renders without crashing" name="App renders without crashing" time="0.016">
+    </testcase>
+    <testcase classname="InputClick Component renders InputClick component correctly" name="InputClick Component renders InputClick component correctly" time="0.005">
+    </testcase>
+    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="QuestionReponses" errors="0" failures="0" skipped="0" timestamp="2024-06-04T15:01:51" time="2.163" tests="2">
+    <testcase classname="QuestionReponses renders without crashing" name="QuestionReponses renders without crashing" time="0.046">
+    </testcase>
+    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.005">
+    </testcase>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,37 @@
+name: Test Jest Repporter
+
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+  actions: read
+  checks: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: install modules
+        run: npm install --force
+
+      - name: test unitaire
+        run: npm run test
+
+      - name: Test unitaire avec rapport
+        run: npx jest --ci --reporters=default --reporters=jest-junit
+
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
+        with:
+          name: JEST Tests            # Name of the check run which will be created
+          path: junit.xml             # Path to test results
+          reporter: jest-junit        # Format of test results
+
+

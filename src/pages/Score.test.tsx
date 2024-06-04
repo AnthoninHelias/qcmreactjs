@@ -3,6 +3,8 @@ import {MemoryRouter} from "react-router-dom";
 import Score from "./Score";
 import React from "react";
 import ButtonClick from "../components/ButtonClick";
+import '@testing-library/jest-dom'
+
 
 
 
@@ -10,7 +12,7 @@ describe('Score', () => {
     it('renders without crashing', () => {
         render(
             (<MemoryRouter>
-                <Score />)
+                <Score />
             </MemoryRouter>));
     });
 });

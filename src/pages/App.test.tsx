@@ -1,18 +1,21 @@
 import React from 'react';
-import {fireEvent, render, screen} from '@testing-library/react';
 import App from './App';
 import {MemoryRouter} from "react-router-dom";
 import InputClick from "../components/InputClick";
 import ButtonClick from "../components/ButtonClick";
+import {fireEvent, render, screen} from "@testing-library/react";
+import '@testing-library/jest-dom'
+
 
 
 describe('App', () => {
   it('renders without crashing', () => {
     render(
         (<MemoryRouter>
-          <App />)
+          <App />
         </MemoryRouter>));
   });
+
 });
 describe('InputClick Component', () => {
     it('renders InputClick component correctly', () => {
