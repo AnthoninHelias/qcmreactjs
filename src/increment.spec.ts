@@ -1,5 +1,4 @@
-import { increment } from "./increment";
-
+import {increment} from "./increment";
 
 test('test increment function', () => {
     expect (increment(1)).toBe(2)

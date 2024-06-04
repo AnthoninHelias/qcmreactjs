@@ -1,3 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="0" failures="0" errors="0" time="2.638">
+<testsuites name="jest tests" tests="3" failures="2" errors="0" time="1.458">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-06-04T10:21:11" time="1.174" tests="1">
+    <testcase classname=" test increment function" name=" test increment function" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="Score" errors="0" failures="2" skipped="0" timestamp="2024-06-04T10:21:11" time="1.314" tests="2">
+    <testcase classname="Score renders without crashing" name="Score renders without crashing" time="0.004">
+      <failure>ReferenceError: document is not defined
+    at render (/home/anthonin/Bureau/qcmreactjs/node_modules/@testing-library/react/dist/pure.js:239:5)
+    at Object.&lt;anonymous&gt; (/home/anthonin/Bureau/qcmreactjs/src/pages/Score.test.tsx:11:15)
+    at Promise.then.completed (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:121:9)
+    at run (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
+    </testcase>
+    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0">
+      <failure>ReferenceError: document is not defined
+    at render (/home/anthonin/Bureau/qcmreactjs/node_modules/@testing-library/react/dist/pure.js:239:5)
+    at Object.&lt;anonymous&gt; (/home/anthonin/Bureau/qcmreactjs/src/pages/Score.test.tsx:20:15)
+    at Promise.then.completed (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:121:9)
+    at run (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
+    </testcase>
+  </testsuite>
 </testsuites>
