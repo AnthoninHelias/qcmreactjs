@@ -10,7 +10,7 @@ describe('Score', () => {
     it('renders without crashing', () => {
         render(
             (<MemoryRouter>
-                <Score />)
+                <Score />
             </MemoryRouter>));
     });
 });

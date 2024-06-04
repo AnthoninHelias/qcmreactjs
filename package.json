@@ -4,11 +4,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/preset-env": "^7.24.6",
     "@testing-library/user-event": "^13.5.0",
     "@types/node": "^16.18.71",
     "@types/react": "^18.2.48",
     "@types/react-dom": "^18.2.18",
     "axios": "^1.6.7",
+    "jest-junit": "^16.0.0",
     "lint": "^0.8.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -27,7 +29,8 @@
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx .",
     "prepare": "husky",
-    "checkH": "tsc --noEmit"
+    "checkH": "tsc --noEmit",
+    "jest-junit": "jest --ci --reporters=default --reporters=jest-junit"
   },
   "eslintConfig": {
     "extends": [
