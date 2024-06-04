@@ -20,11 +20,10 @@ function Score() {
     return (
         <div className="App">
             <header className="App-header">
-                <h1>Score:</h1>
                 <br></br>
                 <div className=" bg-purple-700 h:2 ">
                 {isAboveAverage && <span role="img" aria-label="Applause">Bravo 👏</span>}
-                    <p>Votre score est de : {locationState.score}</p>
+                    <p>Votre score est de  {locationState.score} </p>
                 </div>
                 <Link to={{pathname: `/qcmreactjs`}}>
 
