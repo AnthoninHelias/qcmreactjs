@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
+
+
 function QuestionReponses() {
     const { displayedText } = useParams<{ displayedText: string }>();
     const [score, setScore] = React.useState(0);
@@ -52,7 +54,6 @@ function QuestionReponses() {
             const response = await axios.get(`https://qcm-api-a108ec633b51.herokuapp.com/reponse/${currentAnswerIndex}`);
             const fetchedAnswer = response.data.rows.map((row: { titre: string }) => row.titre);
             setCurrentAnswer(fetchedAnswer);
-            console.log(setCurrentAnswer(fetchedAnswer));
         } catch (error) {
             console.error('Error fetching answer:', error);
         }

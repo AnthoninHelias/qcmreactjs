@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="3" failures="2" errors="0" time="1.422">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-06-04T10:32:43" time="1.154" tests="1">
-    <testcase classname=" test increment function" name=" test increment function" time="0.004">
+<testsuites name="jest tests" tests="3" failures="2" errors="0" time="3.097">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-06-04T12:58:34" time="2.448" tests="1">
+    <testcase classname=" test increment function" name=" test increment function" time="0.006">
     </testcase>
   </testsuite>
-  <testsuite name="Score" errors="0" failures="2" skipped="0" timestamp="2024-06-04T10:32:43" time="1.283" tests="2">
-    <testcase classname="Score renders without crashing" name="Score renders without crashing" time="0.002">
+  <testsuite name="Score" errors="0" failures="2" skipped="0" timestamp="2024-06-04T12:58:34" time="2.813" tests="2">
+    <testcase classname="Score renders without crashing" name="Score renders without crashing" time="0.003">
       <failure>ReferenceError: document is not defined
     at render (/home/anthonin/Bureau/qcmreactjs/node_modules/@testing-library/react/dist/pure.js:239:5)
     at Object.&lt;anonymous&gt; (/home/anthonin/Bureau/qcmreactjs/src/pages/Score.test.tsx:11:15)
@@ -24,7 +24,7 @@
     at runTest (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-runner/build/runTest.js:444:34)
     at Object.worker (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
     </testcase>
-    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0">
+    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.001">
       <failure>ReferenceError: document is not defined
     at render (/home/anthonin/Bureau/qcmreactjs/node_modules/@testing-library/react/dist/pure.js:239:5)
     at Object.&lt;anonymous&gt; (/home/anthonin/Bureau/qcmreactjs/src/pages/Score.test.tsx:20:15)

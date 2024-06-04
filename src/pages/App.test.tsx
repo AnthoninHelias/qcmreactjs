@@ -13,6 +13,7 @@ describe('App', () => {
           <App />
         </MemoryRouter>));
   });
+
 });
 describe('InputClick Component', () => {
     it('renders InputClick component correctly', () => {
