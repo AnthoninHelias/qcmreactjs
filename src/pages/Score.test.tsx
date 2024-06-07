@@ -10,6 +10,7 @@ import '@testing-library/jest-dom'
 
 describe('Score', () => {
     it('renders without crashing', () => {
+        console.log('2')
         render(
             (<MemoryRouter>
                 <Score />
@@ -27,5 +28,6 @@ describe('ButtonClick Component', () => {
         fireEvent.click(buttonElement);
         expect(mockButtonClick).toHaveBeenCalled();
         expect(buttonElement).not.toHaveAttribute('disabled')
+        console.log('1')
         ;});
 });
