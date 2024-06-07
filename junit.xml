@@ -1,46 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="8" failures="1" errors="0" time="3.8">
-  <testsuite name="Score" errors="0" failures="0" skipped="0" timestamp="2024-06-07T08:26:39" time="2.652" tests="2">
-    <testcase classname="Score renders without crashing" name="Score renders without crashing" time="0.016">
+<testsuites name="jest tests" tests="7" failures="0" errors="0" time="3.483">
+  <testsuite name="Score" errors="0" failures="0" skipped="0" timestamp="2024-06-07T08:45:25" time="1.988" tests="2">
+    <testcase classname="Score renders without crashing" name="Score renders without crashing" time="0.017">
     </testcase>
-    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.016">
-    </testcase>
-  </testsuite>
-  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2024-06-07T08:26:39" time="2.844" tests="3">
-    <testcase classname="App renders without crashing" name="App renders without crashing" time="0.019">
-    </testcase>
-    <testcase classname="InputClick Component renders InputClick component correctly" name="InputClick Component renders InputClick component correctly" time="0.006">
-    </testcase>
-    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.006">
+    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.02">
     </testcase>
   </testsuite>
-  <testsuite name="QuestionReponses" errors="0" failures="1" skipped="0" timestamp="2024-06-07T08:26:39" time="2.901" tests="3">
-    <testcase classname="QuestionReponses renders without crashing" name="QuestionReponses renders without crashing" time="0.043">
+  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2024-06-07T08:45:25" time="2.053" tests="3">
+    <testcase classname="App renders without crashing" name="App renders without crashing" time="0.024">
+    </testcase>
+    <testcase classname="InputClick Component renders InputClick component correctly" name="InputClick Component renders InputClick component correctly" time="0.007">
+    </testcase>
+    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="QuestionReponses" errors="0" failures="0" skipped="0" timestamp="2024-06-07T08:45:25" time="2.553" tests="2">
+    <testcase classname="QuestionReponses renders without crashing" name="QuestionReponses renders without crashing" time="0.042">
     </testcase>
     <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.006">
-    </testcase>
-    <testcase classname="ButtonClick Component False getClicked" name="ButtonClick Component False getClicked" time="0.003">
-      <failure>Error: expect(jest.fn()).not.toHaveBeenCalled()
-
-Expected number of calls: 0
-Received number of calls: 1
-
-1: {&quot;_reactName&quot;: &quot;onClick&quot;, &quot;_targetInst&quot;: null, &quot;altKey&quot;: false, &quot;bubbles&quot;: true, &quot;button&quot;: 0, &quot;buttons&quot;: 0, &quot;cancelable&quot;: true, &quot;clientX&quot;: 0, &quot;clientY&quot;: 0, &quot;ctrlKey&quot;: false, &quot;currentTarget&quot;: null, &quot;defaultPrevented&quot;: false, &quot;detail&quot;: 0, &quot;eventPhase&quot;: 3, &quot;getModifierState&quot;: [Function modifierStateGetter], &quot;isDefaultPrevented&quot;: [Function functionThatReturnsFalse], &quot;isPropagationStopped&quot;: [Function functionThatReturnsFalse], &quot;isTrusted&quot;: false, &quot;metaKey&quot;: false, &quot;movementX&quot;: 0, &quot;movementY&quot;: 0, &quot;nativeEvent&quot;: {&quot;isTrusted&quot;: false}, &quot;pageX&quot;: undefined, &quot;pageY&quot;: undefined, &quot;relatedTarget&quot;: null, &quot;screenX&quot;: 0, &quot;screenY&quot;: 0, &quot;shiftKey&quot;: false, &quot;target&quot;: &lt;button class=&quot;bg-red-700&quot;&gt;Paris&lt;/button&gt;, &quot;timeStamp&quot;: 1717748802413, &quot;type&quot;: &quot;click&quot;, &quot;view&quot;: null}
-    at Object.&lt;anonymous&gt; (/home/anthonin/Bureau/qcmreactjs/src/pages/QuestionReponse.test.tsx:45:37)
-    at Promise.then.completed (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/utils.js:298:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/utils.js:231:10)
-    at _callCircusTest (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:316:40)
-    at processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at _runTest (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:252:3)
-    at _runTestsForDescribeBlock (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:126:9)
-    at _runTestsForDescribeBlock (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:121:9)
-    at run (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/run.js:71:3)
-    at runAndTransformResultsToJestFormat (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
-    at jestAdapter (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
-    at runTestInternal (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-runner/build/runTest.js:367:16)
-    at runTest (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-runner/build/runTest.js:444:34)
-    at Object.worker (/home/anthonin/Bureau/qcmreactjs/node_modules/jest-runner/build/testWorker.js:106:12)</failure>
     </testcase>
   </testsuite>
 </testsuites>

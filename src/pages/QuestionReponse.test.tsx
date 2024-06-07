@@ -29,16 +29,3 @@ describe('ButtonClick Component', () => {
         ;});
 });
 
-//test faux
-describe('ButtonClick Component False', () => {
-    it('getClicked', () => {
-        const mockButtonClick = jest.fn();
-        render(
-            <ButtonClick onClick={mockButtonClick} disabled={false}>
-                Paris
-            </ButtonClick>)
-        const buttonElement = screen.getByText('Paris');
-        fireEvent.click(buttonElement);
-        expect(mockButtonClick).not.toHaveBeenCalled(); // This will fail because mockButtonClick is called
-    });
-});
