@@ -8,7 +8,6 @@ import '@testing-library/jest-dom'
 
 
 describe('QuestionReponses', () => {
-    console.log('6')
     it('renders without crashing', () => {
         render(
             (<MemoryRouter>
@@ -17,7 +16,6 @@ describe('QuestionReponses', () => {
     });
 });
 describe('ButtonClick Component', () => {
-    console.log('7')
     it('getClicked', () => {
         const mockButtonClick = jest.fn();
         render(
@@ -33,7 +31,6 @@ describe('ButtonClick Component', () => {
 
 //test faux
 describe('ButtonClick Component False', () => {
-    console.log('8')
     it('getClicked', () => {
         const mockButtonClick = jest.fn();
         render(

@@ -10,7 +10,6 @@ import '@testing-library/jest-dom'
 
 describe('App', () => {
   it('renders without crashing', () => {
-      console.log('3')
     render(
         (<MemoryRouter>
           <App />
@@ -19,14 +18,12 @@ describe('App', () => {
 
 });
 describe('InputClick Component', () => {
-    console.log('4')
     it('renders InputClick component correctly', () => {
         render(<InputClick value="" onChange={() => {}} placeholder="Test Placeholder" />);
         expect(screen.getByPlaceholderText('Test Placeholder')).toBeInTheDocument();
     });
 });
 describe('ButtonClick Component', () => {
-    console.log('5')
     it('getClicked', () => {
     const mockButtonClick = jest.fn();
     render(
