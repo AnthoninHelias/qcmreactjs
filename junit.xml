@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="8" failures="0" errors="0" time="2.886">
-  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-06-04T15:01:51" time="1.712" tests="1">
-    <testcase classname=" test increment function" name=" test increment function" time="0.003">
+<testsuites name="jest tests" tests="10" failures="0" errors="0" time="11.481">
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2024-06-07T10:34:57" time="7.015" tests="3">
+    <testcase classname=" test increment function" name=" test increment function" time="0.032">
+    </testcase>
+    <testcase classname="math increment increment a positive number" name="math increment increment a positive number" time="0.008">
+    </testcase>
+    <testcase classname="math increment increment a negative number" name="math increment increment a negative number" time="0.002">
     </testcase>
   </testsuite>
-  <testsuite name="Score" errors="0" failures="0" skipped="0" timestamp="2024-06-04T15:01:51" time="2.082" tests="2">
-    <testcase classname="Score renders without crashing" name="Score renders without crashing" time="0.011">
+  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2024-06-07T10:34:57" time="9.153" tests="3">
+    <testcase classname="App renders without crashing" name="App renders without crashing" time="0.116">
     </testcase>
-    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.01">
+    <testcase classname="InputClick Component renders InputClick component correctly" name="InputClick Component renders InputClick component correctly" time="0.03">
     </testcase>
-  </testsuite>
-  <testsuite name="App" errors="0" failures="0" skipped="0" timestamp="2024-06-04T15:01:51" time="2.115" tests="3">
-    <testcase classname="App renders without crashing" name="App renders without crashing" time="0.016">
-    </testcase>
-    <testcase classname="InputClick Component renders InputClick component correctly" name="InputClick Component renders InputClick component correctly" time="0.005">
-    </testcase>
-    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.006">
+    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.027">
     </testcase>
   </testsuite>
-  <testsuite name="QuestionReponses" errors="0" failures="0" skipped="0" timestamp="2024-06-04T15:01:51" time="2.163" tests="2">
-    <testcase classname="QuestionReponses renders without crashing" name="QuestionReponses renders without crashing" time="0.046">
+  <testsuite name="Score" errors="0" failures="0" skipped="0" timestamp="2024-06-07T10:34:57" time="9.178" tests="2">
+    <testcase classname="Score renders without crashing" name="Score renders without crashing" time="0.08">
     </testcase>
-    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.005">
+    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.061">
+    </testcase>
+  </testsuite>
+  <testsuite name="QuestionReponses" errors="0" failures="0" skipped="0" timestamp="2024-06-07T10:34:57" time="9.494" tests="2">
+    <testcase classname="QuestionReponses renders without crashing" name="QuestionReponses renders without crashing" time="0.266">
+    </testcase>
+    <testcase classname="ButtonClick Component getClicked" name="ButtonClick Component getClicked" time="0.046">
     </testcase>
   </testsuite>
 </testsuites>
