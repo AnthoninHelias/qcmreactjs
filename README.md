@@ -3,15 +3,15 @@
 Pour commencer à travailler sur ce projet il faut dans un premier temps installer toute les dépendances nécessaires au projet.
 Veuillez exécuter cette commande dans votre terminal : `npm install --force`.
 
-## Bien commencer avec Create React App
+## Lien vers notre githubpage
 
 Lien vers la githubpage du projet : [Look project online](https://anthoninhelias.github.io/qcmreactjs/).
 
-### Bien commencer avec Create React App
+## Bien commencer avec Create React App
 
 Le projet a été boostrappé avec  [Create React App](https://github.com/facebook/create-react-app).
 
-#### Scripts Disponibles
+## Scripts Disponibles
 
 Veuillez exécuter cette commande dans votre terminal pour lancer le serveur : `npm start`.
 Vous pourrez  voir sur le navigateur toutes les modifications en direct et cela entrainera le rechargement de la page.
@@ -24,14 +24,17 @@ Pour plus d'information consulter [deployment](https://facebook.github.io/create
 
 Pour en apprendre plus sur React vous pouvez regarder [React documentation](https://reactjs.org/).
 
-##### Fonctionnement des workflows
+## Fonctionnement des workflows
 
 Les workflows se trouvent dans le dossier `.github/workflows`
+
 `eslint.yml` permet de  vérifier automatiquement la syntaxe en utilisant lint et de vérifier que le langage utilisé est du TypeScript.
+
 `gh-files.yml` permet de déployer automatiquement le projet sur githubpage.
+
 `node.js.yml` perment de vérifier automatiquement les versions de nodes.
 
-###### Husky
+## Husky
 
 Husky permet d'analyser le code avant d'effectuer un commit en utilisant nos différents script , les checks se trouvent dans `.husky/pre-commit` .
 Pour ne pas éxecuter les checks lors du commit , il faut rajouter à la fin du message de commit `-n`.
