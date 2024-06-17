@@ -3,7 +3,7 @@
 Pour commencer à travailler sur ce projet il faut dans un premier temps installer toute les dépendances nécessaires au projet.
 Veuillez exécuter cette commande dans votre terminal : `npm install --force`.
 
-## Bien commencer avec Create React App
+## Lien vers notre githubpage
 
 Lien vers la githubpage du projet : [Look project online](https://anthoninhelias.github.io/qcmreactjs/).
 
