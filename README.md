@@ -44,6 +44,10 @@ Pour en savoir plus [Husky documentation](https://typicode.github.io/husky/).
 
 Ce dossier sert à stocker à un seul endroit toute les ressources que nous trouvons utiles pour notre projet. 
 
+## Lien API "Backend"
+
+[API documentation](https://qcm-api-a108ec633b51.herokuapp.com/doc/)
+
 ## Auteurs 
 
 [Anthonin Helias](https://github.com/AnthoninHelias). 
