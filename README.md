@@ -32,9 +32,9 @@ Les workflows se trouvent dans le dossier `.github/workflows`
 ##### Husky
 
 Husky permet d'analyser le code avant d'effectuer un commit en utilisant nos différents script , les checks se trouvent dans `.husky/pre-commit` .
-Pour ne pas éxecuter les checks lors du commit , il faut rajouter a la fin du message de commit `-n`.
+Pour ne pas éxecuter les checks lors du commit , il faut rajouter à la fin du message de commit `-n`.
 Pour en savoir plus [Husky documentation](https://typicode.github.io/husky/).
 
 ###### Dossier ressources (celui en dehors du src)
 
-Ce dossier sert à stocker a un seul endroit toute les ressources que nous trouvons utiles pour notre projet. 
+Ce dossier sert à stocker à un seul endroit toute les ressources que nous trouvons utiles pour notre projet. 
