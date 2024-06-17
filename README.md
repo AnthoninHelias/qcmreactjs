@@ -40,6 +40,12 @@ Husky permet d'analyser le code avant d'effectuer un commit en utilisant nos dif
 Pour ne pas éxecuter les checks lors du commit , il faut rajouter à la fin du message de commit `-n`.
 Pour en savoir plus [Husky documentation](https://typicode.github.io/husky/).
 
-###### Dossier ressources (celui en dehors du src)
+## Dossier ressources (celui en dehors du src)
 
 Ce dossier sert à stocker à un seul endroit toute les ressources que nous trouvons utiles pour notre projet. 
+
+## Auteurs 
+
+[Anthonin Helias](https://github.com/AnthoninHelias). 
+
+[Yehouda Schlanger](https://github.com/schlanger). 
