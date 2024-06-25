@@ -13,7 +13,7 @@ function QuestionReponses() {
 
     return (
         <div className="App">
-            <Timer initialTime={5777} />
+            <Timer initialTime={15} />
             <header className="App-header">
                 <p>Score: {score}</p>
                 <p>Bonjour: {displayedText}</p>

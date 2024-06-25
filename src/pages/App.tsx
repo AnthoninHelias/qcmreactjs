@@ -44,7 +44,6 @@ function App() {
               placeholder="Entrez un nom"
               style={{color: 'black'}}
           />
-          <h3>Veuillez saisir votre nom</h3>
 
           <Link to={{pathname: `/QuestionReponses/${inputValue || playerName }`}}>
 
