@@ -6,6 +6,7 @@
   "dependencies": {
     "@babel/preset-env": "^7.24.6",
     "@babel/preset-react": "^7.24.6",
+    "@testing-library/react-hooks": "^8.0.1",
     "@testing-library/user-event": "^13.5.0",
     "@types/node": "^16.18.71",
     "@types/react": "^18.2.48",
