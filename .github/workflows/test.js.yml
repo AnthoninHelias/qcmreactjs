@@ -20,9 +20,6 @@ jobs:
       - name: install modules
         run: npm install --force
 
-      - name: test unitaire
-        run: npm run test
-
       - name: Test unitaire avec rapport
         run: npx jest --ci --reporters=default --reporters=jest-junit
 
