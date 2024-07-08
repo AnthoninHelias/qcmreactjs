@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/qcmreactjs/static/css/main.880a886a.css",
-    "main.js": "/qcmreactjs/static/js/main.235bd3a8.js",
+    "main.js": "/qcmreactjs/static/js/main.dfcc7673.js",
     "index.html": "/qcmreactjs/index.html",
     "main.880a886a.css.map": "/qcmreactjs/static/css/main.880a886a.css.map",
-    "main.235bd3a8.js.map": "/qcmreactjs/static/js/main.235bd3a8.js.map"
+    "main.dfcc7673.js.map": "/qcmreactjs/static/js/main.dfcc7673.js.map"
   },
   "entrypoints": [
     "static/css/main.880a886a.css",
-    "static/js/main.235bd3a8.js"
+    "static/js/main.dfcc7673.js"
   ]
 }
